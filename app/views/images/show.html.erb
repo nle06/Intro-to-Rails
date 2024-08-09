@@ -1,0 +1,3 @@
+<h1>Image</h1>
+<%= image_tag @image.url, alt: @image.breed.name %>
+<p>Breed: <%= link_to @image.breed.name, breed_path(@image.breed) %></p>

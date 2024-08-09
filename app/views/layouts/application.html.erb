@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">RailsProject</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><%= link_to 'Home', root_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'About', about_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Breeds', breeds_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Images', images_path, class: "nav-link" %></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

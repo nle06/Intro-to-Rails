@@ -1,0 +1,26 @@
+<h1>Breeds</h1>
+
+<%= form_with url: breeds_path, method: :get, local: true do %>
+  <div class="form-group">
+    <%= label_tag :search, "Search Breeds:" %>
+    <%= text_field_tag :search, params[:search], class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :group_id, "Filter by Group:" %>
+    <%= select_tag :group_id, options_from_collection_for_select(Group.all, :id, :name, params[:group_id]), include_blank: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<% if @breeds.any? %>
+  <ul class="list-group">
+    <% @breeds.each do |breed| %>
+      <li class="list-group-item"><%= link_to breed.name, breed_path(breed) %></li>
+    <% end %>
+  </ul>
+  <%= paginate @breeds %>
+<% else %>
+  <p>No breeds found.</p>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>About</h1>
+<h2>Data Sources</h2>
+<p>
+  1.1 - Describe Datasets
+Dataset: Dog API
+Description: The Dog API provides a vast collection of images of different breeds of dogs. The data includes the breed names and URLs to the images.
+Structure:
+•	Breed: Contains the name of the breed.
+•	Image: Contains the URL of the image and references the breed.
+Required Database Tables and Columns:
+1.	Breeds
+o	id (integer, primary key)
+o	name (string)
+2.	Images
+o	id (integer, primary key)
+o	url (string)
+o	breed_id (integer, foreign key)
+Integration:
+•	Each breed can have multiple images. Therefore, the breeds table will have a one-to-many relationship with the images table.
+
+</p>
+
+<h2>Entity-Relationship Diagram (ERD)</h2>
+<p>Our database schema includes the following tables:</p>
+<ul>
+  <li><strong>Breeds:</strong> Contains the name of the breed.</li>
+  <li><strong>Images:</strong> Contains the URL of the image and references the breed.</li>
+</ul>
+<p>The Breeds table has a one-to-many relationship with the Images table.</p>
+<p><%= link_to 'View Breeds', breeds_path %></p>
